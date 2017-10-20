@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//Ho messo i commenti in un commento al commit.
+
 using namespace std;
 
 typedef struct carta{
