@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-//Ho messo i commenti in un commento al commit.
-
 using namespace std;
 
 typedef struct carta{
@@ -37,12 +35,12 @@ void mischia(FILE *f){ //NON SONO ANCORA SICURISSIMO RIGUARDO IL FUNZIONAMENTO D
     int i2=1;
     int s,c;
     do{
-    fseek (f, i1, SEEK_END);
+    fseek (f, i1, SEEK_SET);
     fread(&s,sizeof(int),1,f);
-        fseek (f, i2, SEEK_END);
+        fseek (f, i2, SEEK_CUR);
         fread(&c,sizeof(int),1,f);
         fwrite(&s,sizeof(int),1,f);
-        fseek (f, i1, SEEK_END);
+        fseek (f, i1, SEEK_CUR);
         fwrite(&c,sizeof(int),1,f);
         i1++;
         i2++;
